@@ -24,28 +24,31 @@ secret_number = random.randint(1, 100)
 
 attempts = 0
 
-print("\n\nTEBAK TEBAKAN\n")
+print("\n==============TEBAK TEBAKAN==============\n")
 print("Tebak angka 1-100\n")
 
 while True:
 
-    user_guess = int(input("Tebak: "))
+    
+    try:
+        user_guess = int(input("Tebak: "))
 
-    attempts += 1
+        attempts += 1
+        if user_guess == secret_number:
+            print(f"\n\n\n============== Selamat, berhasil menebak sebanyak {attempts} percobaan ==============\n")
+            print("Tebak kalimat berikut\n")
+            for i in range(6, -1, -1):
+                print(f"{i}...")
+                time.sleep(1)
+            os.system('cls')
+            break
 
-    if user_guess == secret_number:
-        print(f" Selamat, berhasil menebak sebanyak {attempts} percobaan.\n")
-        print("Tebak kalimat berikut\n")
-        for i in range(6, -1, -1):
-            print(f"{i}...")
-            time.sleep(1)
-        os.system('cls')
-        break
-
-    elif user_guess > secret_number:
-        print("Tebakan terlalu tinggi")
-    else:
-        print("Tebakan terlalu rendah")
+        elif user_guess > secret_number:
+            print("Tebakan terlalu tinggi")
+        else:
+            print("Tebakan terlalu rendah")
+    except ValueError:
+        print("==============Input tidak valid. Silakan coba lagi!==============\n")
 
 
 print(result)
