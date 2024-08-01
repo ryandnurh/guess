@@ -48,7 +48,7 @@ while True:
         else:
             print("Tebakan terlalu rendah")
     except ValueError:
-        print("==============Input tidak valid. Silakan coba lagi!==============\n")
+        print("============== Input tidak valid. Silakan coba lagi! ==============\n")
 
 
 print(result)
